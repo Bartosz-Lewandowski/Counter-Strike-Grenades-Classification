@@ -8,16 +8,16 @@ import seaborn as sns
 import os
 
 #read data
-mirage = pd.read_csv('./data/train-grenades-de_mirage.csv')
-inferno = pd.read_csv('./data/train-grenades-de_inferno.csv')
+mirage = pd.read_csv('../data/train-grenades-de_mirage.csv')
+inferno = pd.read_csv('../data/train-grenades-de_inferno.csv')
 
 #concate data
 complete_data = pd.concat([mirage,inferno])
 #save concatanate data to csv
-complete_data.to_csv('./data/complete_data.csv', index = False)
+complete_data.to_csv('../data/complete_data.csv', index = False)
 
 #load complete dataset
-data = pd.read_csv('./data/complete_data.csv')
+data = pd.read_csv('../data/complete_data.csv')
 
 #function to plot countplot
 #I use it to show if dataset is balanced or not
@@ -30,7 +30,7 @@ def plot_count(feature, data):
 
 #Plotting countplot
 plot_count('LABEL', data)
-plt.savefig('./plots/complete_dataset_label_proportion.png')
+plt.savefig('../plots/complete_dataset_label_proportion.png')
 
 #Separate dataset to label and features
 X = data.loc[:, data.columns != 'LABEL']
@@ -47,11 +47,11 @@ train_data = pd.concat([x_train,y_train], axis = 1)
 
 #check proportions of new datasets
 plot_count('LABEL', train_data)
-plt.savefig('./plots/train_label_proportion.png')
+plt.savefig('../plots/train_label_proportion.png')
 
 #The datasets are separated correctly (proportions are maintained)
 #save those datasets to csv files for future use
 
-train_data.to_csv('./data/train.csv', index = False)
-x_test.to_csv('./data/test.csv', index = False)
-y_test.to_csv('./data/test_labels.csv', index = False)
+train_data.to_csv('../data/train.csv', index = False)
+x_test.to_csv('../data/test.csv', index = False)
+y_test.to_csv('../data/test_labels.csv', index = False)

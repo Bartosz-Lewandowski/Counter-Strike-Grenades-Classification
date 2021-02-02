@@ -6,7 +6,7 @@
 * [How to run scripts](#how-to-run-scripts)
 
 ## General info 
-This is my solution foresportsLABgg Counter-Strike Data Challenge. I had to create a python binary classifier for labeling grenade throws as correct/incorrect. My solution had to be a single python script named "classify.py" which reads from the command-line input the name of a file with grenade features. Script should overwrite test dataset with new column called "LABEL". 
+This is my solution for esportsLABgg Counter-Strike Data Challenge. I had to create a python binary classifier for labeling grenade throws as correct/incorrect. My solution had to be a single python script named "classify.py" which reads from the command-line input the name of a file with grenade features. Script should overwrite test dataset with new column called "LABEL". 
 ## Files description
 I will briefly explain what some files are for. I will not describe all the files.
 The "scripts" folder contains the code files. There are :  
@@ -31,11 +31,12 @@ Each grenade throw recorded in the input CSV file (single row) is described usin
 * TYPE: type of the grenade (smoke,flashbang,molotov)
 * map_name:  map on which the match was played (de_inferno, de_mirage)
 
-Data for the competition included training datasets consisting of grenade throw data from two major competitive maps:de_inferno and de_mirage, each grenade throw is labeled using a boolean value. The meaning of the values in column ’LABEL’ is either correct throw (TRUE) or incorrect throw (FALSE). There are two sets of labeled training data:
+Data for the competition included training datasets consisting of grenade throw data from two major competitive maps: de_inferno and de_mirage, each grenade throw is labeled using a boolean value. The meaning of the values in column ’LABEL’ is either correct throw (TRUE) or incorrect throw (FALSE).  
+There are two sets of labeled training data:
 * train-grenades-de_inferno.csv:  features of 354 grenade throws on de_inferno map
 * train-grenades-de_mirage.csv:  features of 370 grenade throws on de_mirage map
 
-# How to run script
+# How to run scripts
 First of all download the necessary packages from requirements.txt  
 ``` 
 pip install -r requirements.txt
